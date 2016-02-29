@@ -16,28 +16,28 @@ class trial(object):
 		self.bet = bet
 
 
-	# an angel opens one door to reveal a booby prize
+	# monty opens one door to reveal a booby prize
 	def openDoor(self):
 		doors = np.array([0,0,0])
 		doors[self.prize] = 1
 		doors[self.bet] = 1
 
-		# angel's choice is between two doors (if user is selecting prize), or
+		# monty's choice is between two doors (if user is selecting prize), or
 		# restricted to single door if users door and prize door are different
 		freeDoors = np.where(doors==0)[0]
-		angelDoor = freeDoors[np.random.randint(len(freeDoors))] # door index
-		self.angelDoor = angelDoor
+		montyDoor = freeDoors[np.random.randint(len(freeDoors))] # door index
+		self.montyDoor = montyDoor
 
-		# value behind the angelDoor should always be zero
-		if doors[angelDoor]:
+		# value behind the montyDoor should always be zero
+		if doors[montyDoor]:
 			print "THAT WAS SUPPOSED TO BE ZERO :( "
-		return angelDoor
+		return montyDoor
 
 
 	# user may choose to change their bet to the remaining closed door
 	def changeDoor(self,change=False):
 		doors = np.array([0,0,0])
-		doors[self.angelDoor] = 1
+		doors[self.montyDoor] = 1
 		doors[self.bet] = 1
 
 		option = np.where(doors==0)[0]
