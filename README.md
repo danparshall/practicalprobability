@@ -48,9 +48,9 @@ I couldn't find much about chicken eggs from commercial sources, but a [paper](h
 I figure that meat of any sort is roughly 1/3 water, 1/3 fat, and 1/3 protein. So a kilo of meat has 300g of protein. To get 75g of protein (the ballpark for 3 scoops of protein powder) I'll need to eat around 250g of meat (around 8 oz). That will also mean a few ug of heavy metals if eating meat, up to 10s of ug if eating fish. Protein powder falls in between those two, so I'm not going to worry about it.
 
 
-## Monty Haul : a quick simulation
+## Monty Hall : a quick simulation
 
-The famous [Monty Haul problem](https://en.wikipedia.org/wiki/Monty_Hall_problem) continues to frustrate people, because the correct solution is so counterintuitive.  I wrote a quick simulation that allows the user to easily verify the result: keeping the same door wins 1/3 of the time, changing doors wints 2/3 of the time.
+The famous [Monty Hall problem](https://en.wikipedia.org/wiki/Monty_Hall_problem) continues to frustrate people, because the correct solution is so counterintuitive.  I wrote a quick simulation that allows the user to easily verify the result: keeping the same door wins 1/3 of the time, changing doors wins 2/3 of the time.
 
 
 
