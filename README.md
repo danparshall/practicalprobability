@@ -18,7 +18,6 @@ where
 	P(E)   : the probability that this error would be seen, whether or not there is a bug
 
 	P(B|E) : The updated probability the system is buggy, given that we have seen an error
-
 ```
 
 The term P(B|E) is what we want to know, and so we need values for the right-hand side of the equation.  The trick to useful real-world probability calculations is getting reasonable estimates for the key terms.
