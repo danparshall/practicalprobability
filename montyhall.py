@@ -54,13 +54,20 @@ class trial(object):
 			return 0
 
 
-wins = 0
-runs = 10000
-for i in range(runs):
-	ordeal = trial()
-	ordeal.makeBet(np.random.randint(3))
-	opened = ordeal.openDoor()
-	ordeal.changeDoor(True)
-	wins += ordeal.resolve()
+def runOrdeals(runs,changeDoor):
+	wins = 0
+	for i in range(runs):
+		ordeal = trial()
+		ordeal.makeBet(np.random.randint(3))
+		opened = ordeal.openDoor()
+		ordeal.changeDoor(changeDoor)
+		wins += ordeal.resolve()
+	return wins
 
-print wins*1.0/runs
+
+runs = 10000
+winChange = runOrdeals(runs,True)
+winKeep = runOrdeals(runs,False)
+
+print "When Keeping the original door, win probability is", winKeep*1.0/runs
+print "When Changing the original door, win probability is", winChange*1.0/runs
