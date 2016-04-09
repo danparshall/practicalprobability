@@ -70,8 +70,7 @@ This is such an astonishing result that almost no one believes it the first time
 
 When trying to build muscle, it's important to get plenty of protein (the rule of thumb for weightlifters is daily protein intake should be 1 gram per pound of body mass).  It's certainly best to get protein from whole-food sources, but most people also use some powdered supplements.  Someone asked me about an [article](http://www.consumerreports.org/cro/2012/04/protein-drinks/index.htm) in Consumer Reports which found traces of heavy metals.
 
-My down-and-dirty analysis is this: If I'm going to eat protein, it's important to look at the levels of cadmium, mercury, etc *per unit of protein*. So for comparison, lead and cadmium in meat are generally found at the level of a few ug/kg, based on the abstract I found here:
-http://www.ingentaconnect.com/content/tandf/tfac/2006/00000023/00000008/art00002
+My down-and-dirty analysis is this: If I'm going to eat protein, it's important to look at the levels of cadmium, mercury, etc *per unit of protein*. So for comparison, lead and cadmium in meat are generally found at the level of a few ug/kg, based on the abstract I found [here](http://www.ingentaconnect.com/content/tandf/tfac/2006/00000023/00000008/art00002).
 
 Seafood is generally [significantly worse](http://www.ncbi.nlm.nih.gov/pubmed/12623648), roughly 100 ug/kg. 
 
