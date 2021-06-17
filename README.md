@@ -2,6 +2,32 @@
 
 This is just a scratchpad of various probability estimates, with occasional code snippets.  Also practice for using GitHub's markdown system.
 
+## Should I fly coach or business class during COVID?
+A friend needed to fly from DC to Texas, and was wondering how much safer she'd be in First/Business class vs coach.  I looked at this 3 different ways, in all cases assuming a 3-hour flight.  But they're all giving me a few chances in a million-ish, so not much to worry about.
+
+
+### Method #1 - plane-wide perspective
+So currently the COVID prevalence in TX is 1 in 1000, in MD it's 1 in 2000, average that to 1 in 1500.  Southwest flights have 150 seats.  So the probability that someone on board a full flight has COVID is ~10%. 
+
+Conditional on someone having COVID, the probability that in a 3-hour flight they transmit to another passenger is around 0.5% without masks (based on data from a couple of flights very early in the pandemic).  That's a rate about 20 times lower than normal indoor conditions - but that makes perfect sense, because the airflow rate is about 20 times higher.  Masks knock it down by roughly a factor of 4.  Conditional on being exposed to someone with COVID, your personal probability of acquiring it is 10 times lower, due to vaccines. So overall,
+(1/10 * 1/200 * 1/10 * 1/4) = 1 in 80,000 (this is a pretty noisy estimate, bc it's based on only a few transmissions)
+
+### Method #2 - local perspective
+Another way to do the analysis, consider how many people are sitting within 6 feet of you in coach vs first class, for an estimate of risk-reduction.  In coach the seats are typically spaced 31 inches, so let's say that on your side of the plane, the 2 rows in front/behind contribute, and the 3 rows across the aisle, making a total of 17 passengers (if the flight is full).  The probability one of them has COVID is (17 in 1500), and the probability of transmission would be ~25% for 3 hours of indoor conditions.  But on airplane the transmission rate goes down by a factor of 20, with masks down by 4, vaccines by 10, so we have
+(17/1500 * 1/4 * 1/20 * 1/4 * 1/10) ~ 1 in 300,000
+
+In first class, the seats are spaced further, so let's say there's only 5 people within two meters.  That reduces the risk by ~17/5, or around 3.4.  So the risk goes to ~ 1 in 1 million when in First Class
+
+### Method #3 - MicroCovid
+https://www.microcovid.org/?distance=sixFt&duration=180&interaction=oneTime&personCount=41&riskProfile=average&setting=plane&theirMask=basic&topLocation=US_48&voice=silent&yourMask=basic
+Even MicroCovid rates a full flight at 40 uC, which is 1 in 25,000.  Including vaccination, that puts it at 1 in 250,000
+
+### Conclusion
+Flying is much safer than most people realize, so much so that the extra benefit of flying First class is pretty trivial.
+
+
+
+
 ## Is the new computer system buggy?
 A friend complained about a computer change at his work.  They instituted a new front-end interface for their existing database.  The first day after the new interface was implemented, he ran into an error retrieving certain data (one which occasionally came about previously, but only once a year or so).  The tech support folks claimed this was pure coincidence, nothing more.  Intuitively, it seems unlikely that something would *just happen* to break right after a new system was implemented, even if new system wasn't supposed to affect the back-end.  He wanted to know how likely it was that the system really was buggy.
 
@@ -29,9 +55,9 @@ The chance of an error generally (the denominator) is the composite of both of o
 The other possible world is when the system does have a bug: P(E|B)*P(B).  We can't be positive of the value for P(E|B), but since this is the first day with the new system we can imagine it's around 50% (if we had gone several days before seeing this bug, the value would be lower).
 
 ```
- 	 			P(E|B) * P(B)						0.5 * 0.05
-P(B|E) =  	  ------------------			=    -----------------		= 0.56
-			P(E|B)*P(B) + P(E|~B)*P(~B)			0.5*0.05 + 0.02*0.95
+                     P(E|B) * P(B)                       0.5 * 0.05
+P(B|E) =          ------------------           =     -----------------         = 0.56
+               P(E|B)*P(B) + P(E|~B)*P(~B)           0.5*0.05 + 0.02*0.95
 ```
 
 Or a 56% chance that the system has a bug.  This matches nicely with our intuitive suspicion: we can't be absolutely sure that the new system is buggy, but it is *awfully suspicious* that this happened.
@@ -39,9 +65,9 @@ Or a 56% chance that the system has a bug.  This matches nicely with our intuiti
 If the bug occurs again within the week, then we might revise our estimate of P(E|B) down slightly - only twice within 5 business days means it's 0.4.  But since our new prior for a buggy system is 56%, We end up extremely confident that there's a bug:
 
 ```
-				0.4 * 0.56				.224	
-P(B|E) = 		------------		=   -----	= 0.96
-			0.4*0.56 + 0.02*0.44		.238 
+                      0.4 * 0.56             .224	
+P(B|E) =           ---------------       =   -----    = 0.96
+                0.4*0.56 + 0.02*0.44         .238 
 ```
 
 
